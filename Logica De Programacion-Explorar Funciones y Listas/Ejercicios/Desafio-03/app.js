@@ -53,6 +53,34 @@ function obtenerDolares() {
     utilizando la altura y la anchura que se proporcionarán como parámetros.
 */
 
+function calculoArea(altura, ancho){
+    return ancho*altura;
+};
 
+function calculoPerimetro(altura, ancho){
+    return (2*ancho)+(2*altura);
+};
+
+
+function obtenerAlturaAncho(){
+    let altura = parseFloat(document.getElementById('alturaRectangulo').value);
+    let ancho = parseFloat(document.getElementById('ancho').value);
+
+    let perimetro = calculoPerimetro(altura, ancho);
+    let area = calculoArea(altura, ancho);
+
+    document.getElementById('resultadoPerimetro').innerText = perimetro.toFixed(2);
+    document.getElementById('resultadoArea').innerText = area.toFixed(2);
+};
+
+/*
+    5. Crea una función que muestre en pantalla el área y el perímetro de una sala circular, 
+    utilizando su radio que se proporcionará como parámetro. Considera Pi = 3,14.
+*/
+
+
+
+
+//6. Crea una función que muestre en pantalla la tabla de multiplicar de un número dado como parámetro.
 
 
