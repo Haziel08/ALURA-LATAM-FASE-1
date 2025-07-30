@@ -1,5 +1,7 @@
-let numeroSecreto = generarNumeroSecreto();
+let listaNumerosSorteados = [];
+let numeroSecreto;
 let intentos = 1;
+
 
 function asignarTextoElemento(elemento, texto){
     let titulo = document.querySelector(elemento);
@@ -31,9 +33,18 @@ function limpiarCaja(){
 };
 
 function generarNumeroSecreto() {
-    let numeroSecreto = Math.floor(Math.random()*10)+1;
-    return numeroSecreto;
+    let numeroGenerado = Math.floor(Math.random() * 10) + 1;
+    console.log(numeroGenerado);
+    if (listaNumerosSorteados.includes(numeroGenerado)) {
+        return generarNumeroSecreto();
+    } else {
+        listaNumerosSorteados.push(numeroGenerado);
+        console.log(listaNumerosSorteados);
+        return numeroGenerado;
+    }
+
 };
+
 
 function condicionesIniciales() {
     asignarTextoElemento('h1', 'Juego del número secreto');
