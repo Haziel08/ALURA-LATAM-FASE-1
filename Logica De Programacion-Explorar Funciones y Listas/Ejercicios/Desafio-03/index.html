@@ -36,19 +36,24 @@
             <input type="number" min="1" step="any" id="alturaRectangulo" placeholder="Ingres la altura en [m]">
             <input type="number" min="1" step="any" id="ancho" placeholder="Ingres el ancho en [m]">
             <button onclick="obtenerAlturaAncho();">Calcular Área y Perímetro</button>
-            <h3>El perímetro es: <span id="resultadoPerimetro">m</span></h3>
-            <h3>El área es: <span id="resultadoArea">m<sup>2</sup></span></h3>
+            <h3>El perímetro es: <span id="resultadoPerimetro"></span></h3>
+            <h3>El área es: <span id="resultadoArea"></span></h3>
         </div>
 
         <div class="linea-ejercicio">
-            <input type="number" id="numero1" placeholder="Primer número">
-            <input type="number" id="numero2" placeholder="Segundo número">
-            <button onclick="obtenerMayorDesdeInput();">Saber Mayor</button>
+            <h2>Cálculo de Área y Perímetro de un Círculo</h2>
+            <input type="number" min="1" step="any" id="radio" placeholder="Ingresa el radio en [m]">
+            <button onclick="obtenerRadio();">Calcular Área y Perímetro</button>
+            <h3>El perímetro es: <span id="resultadoPerimetroCirc"></span></h3>
+            <h3>El área es: <span id="resultadoAreaCirc"></span></h3>
         </div>
 
         <div class="linea-ejercicio">
-            <input type="number" id="numeroCua" placeholder="Número Cuadrado">
-            <button onclick="obtenerCuadradoDesdeInput();">Calcular Cuadrado</button>
+            <h2>Tabla de Multiplicar de un Número</h2>
+            <input type="number" min="1" step="1" id="numeroMultiplicar" placeholder="Ingresa el número">
+            <button onclick="obtenerTablaMultiplicar();">Mostrar Tabla</button>
+            <h3>Resultado:</h3>
+            <ul id="resultadoTabla"></ul>
         </div>
 
     </div>

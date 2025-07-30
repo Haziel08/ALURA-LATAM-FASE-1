@@ -69,8 +69,8 @@ function obtenerAlturaAncho(){
     let perimetro = calculoPerimetro(altura, ancho);
     let area = calculoArea(altura, ancho);
 
-    document.getElementById('resultadoPerimetro').innerText = perimetro.toFixed(2);
-    document.getElementById('resultadoArea').innerText = area.toFixed(2);
+    document.getElementById('resultadoPerimetro').innerText = perimetro.toFixed(2) + ' m';
+    document.getElementById('resultadoArea').innerHTML = area.toFixed(2) + ' m<sup>2</sup>';
 };
 
 /*
@@ -78,9 +78,36 @@ function obtenerAlturaAncho(){
     utilizando su radio que se proporcionará como parámetro. Considera Pi = 3,14.
 */
 
+function calculoPerimetroCirc(radio){
+    return 2 * Math.PI * radio;
+};
 
+function calculoAreaCirc(radio){
+    return Math.PI * Math.pow(radio, 2);
+};
 
+function obtenerRadio(){
+    let radio = parseFloat(document.getElementById('radio').value);
 
-//6. Crea una función que muestre en pantalla la tabla de multiplicar de un número dado como parámetro.
+    let perimetro = calculoPerimetroCirc(radio);
+    let area = calculoAreaCirc(radio);
 
+    //innerText pone solo texto plano.
+    document.getElementById('resultadoPerimetroCirc').innerText = perimetro.toFixed(2) + ' m';
+    //innerHTML puede insertar varios elementos HTML, como <li>, <div>, etc.
+    document.getElementById('resultadoAreaCirc').innerHTML = area.toFixed(2) + ' m<sup>2</sup>';
+};
+
+//6. Crea una función que muestre en pantalla la tabla de multiplicar de un número dado
+function obtenerTablaMultiplicar() {
+    let numero = parseInt(document.getElementById('numeroMultiplicar').value);
+    let resultadoHTML = '';
+
+    for (let i = 1; i <= 10; i++) {
+        let resultado = numero * i;
+        resultadoHTML += `<li>${numero} × ${i} = ${resultado}</li>`;
+    }
+
+    document.getElementById('resultadoTabla').innerHTML = resultadoHTML;
+}
 
