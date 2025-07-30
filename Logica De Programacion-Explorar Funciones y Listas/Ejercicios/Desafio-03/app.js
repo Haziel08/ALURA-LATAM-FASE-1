@@ -109,5 +109,5 @@ function obtenerTablaMultiplicar() {
     }
 
     document.getElementById('resultadoTabla').innerHTML = resultadoHTML;
-}
+};
 
